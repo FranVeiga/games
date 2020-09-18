@@ -18,7 +18,7 @@ class Sudoku():
 
     def __init__(self):
         self.running = True
-        self.path = os.path.dirname(".\\sudoku.py")
+        self.path = os.path.dirname("./sudoku.py")
         
         self.clock = pg.time.Clock()
 
@@ -28,7 +28,7 @@ class Sudoku():
         self.height = self.y_to_pxl(self.h)
         self.width = self.x_to_pxl(self.w)
         self.display = pg.display.set_mode((self.width, self.height))
-        self.icon = pg.image.load(f'{self.path}\\Sudoku_dep\\sudoku.png')
+        self.icon = pg.image.load(f'{self.path}/Sudoku_dep/sudoku.png')
         pg.display.set_icon(self.icon)
         pg.display.set_caption('Sudoku')
 
@@ -242,21 +242,21 @@ class Sudoku():
                 if event.type == pg.KEYDOWN:
                     if event.key == pg.K_1:
                         selecting = False
-                        return f'{self.path}\\Sudoku_dep\\easy_boards.txt'
+                        return f'{self.path}/Sudoku_dep/easy_boards.txt'
                     if event.key == pg.K_2:
                         selecting = False
-                        return f'{self.path}\\Sudoku_dep\\medium_boards.txt'
+                        return f'{self.path}/Sudoku_dep/medium_boards.txt'
                     if event.key == pg.K_3:
                         selecting = False
-                        return f'{self.path}\\Sudoku_dep\\hard_boards.txt'
+                        return f'{self.path}/Sudoku_dep/hard_boards.txt'
                     if event.key == pg.K_4:
                         selecting = False
-                        return f'{self.path}\\Sudoku_dep\\impossible_boards.txt'
+                        return f'{self.path}/Sudoku_dep/impossible_boards.txt'
                 if event.type == pg.MOUSEBUTTONDOWN:
                     if self.return_button_rect.collidepoint(pg.mouse.get_pos()):
                         self.running = False
                         selecting = False
-                        return f'{self.path}\\Sudoku_dep\\impossible_boards.txt'
+                        return f'{self.path}/Sudoku_dep/impossible_boards.txt'
                 
             
             self.display.fill((0, 0, 0))
