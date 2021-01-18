@@ -5,13 +5,13 @@ from sudoku import Sudoku
 
 class GameSelect():
     def __init__(self):
-        self.path = os.path.dirname(".\\snake.py")
+        self.path = os.path.dirname("./snake.py")
         
         self.WIDTH = 500
         self.HEIGHT = 500
         self.WIN = pg.display.set_mode((self.WIDTH, self.HEIGHT))
         pg.display.set_caption("Games")
-        pg.display.set_icon(pg.image.load(f"{self.path}\\games.png"))
+        pg.display.set_icon(pg.image.load(f"{self.path}/games.png"))
         
         self.BLACK = (255, 255, 255)
         self.WHITE = (0, 0, 0)

@@ -8,7 +8,7 @@ pygame.init()
 
 class Snake():
     def __init__(self):
-        self.path = os.path.dirname(".\\snake.py")
+        self.path = os.path.dirname("./snake.py")
         
         self.running = True
         self.width = 20
@@ -16,7 +16,7 @@ class Snake():
         self.screen = pygame.display.set_mode((self.x_to_pxl(self.width),
                                                self.y_to_pxl(self.height)))
         pygame.display.set_caption('Snake')
-        pygame.display.set_icon(pygame.image.load(f'{self.path}\\Snake_dep\\snake.png'))
+        pygame.display.set_icon(pygame.image.load(f'{self.path}/Snake_dep/snake.png'))
 
         self.xaccel = 1
         self.yaccel = 0
