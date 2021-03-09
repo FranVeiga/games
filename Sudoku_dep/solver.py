@@ -1,4 +1,4 @@
-
+import pygame as pg
 
 def validate(board, value, x, y):
     for row in range(len(board[0])):
@@ -28,25 +28,30 @@ def find(board):
     return None
 
 
-def solve(board):
-    emptyPos = find(board)
+def solve(sudoku):
+#    sudoku.clock.tick(30)
+    emptyPos = find(sudoku.board)
     if emptyPos:
+        sudoku.selectedSquare = sudoku.squareArray[emptyPos[0]][emptyPos[1]]
         row, column = emptyPos
     else:
         return True
 
     for i in range(1, 10):
-        if validate(board, i, column, row):
-            board[row][column] = i
+        if validate(sudoku.board, i, column, row):
+            sudoku.board[row][column] = i
+            sudoku.updateSquareArray()
+            sudoku.display.fill((0, 0, 0))
+            sudoku.renderBoard()
+            pg.display.update()
 
-            if solve(board):
+            if solve(sudoku):
                 return True
 
-        board[row][column] = 0
+        sudoku.board[row][column] = 0
 
     return False
 
 
-def solveBoard(board):
-    solve(board)
-    return board
+def solveBoard(sudoku):
+    solve(sudoku)

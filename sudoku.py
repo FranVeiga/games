@@ -286,7 +286,7 @@ class Sudoku():
                 if event.type == pg.KEYDOWN:
                     self.setNumber(event)
                     if event.key == pg.K_s:
-                        solver.solveBoard(self.board)
+                        solver.solveBoard(self)
                         self.updateSquareArray()
 
             self.display.fill((0, 0, 0))
